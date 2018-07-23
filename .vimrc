@@ -159,7 +159,11 @@ let g:ycm_warning_symbol='⚠'
 " 语法分析错误提示框
 let g:ycm_show_diagnostics_ui=1
 " ycm will show the completion menu even, when typing inside comments.
-let g:ycm_completion_in_comments=1
+
+let g:ycm_semantic_triggers =  {
+      \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+      \ 'cs,lua,javascript': ['re!\w{2}'],
+      \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -223,6 +227,8 @@ Plug 'justinmk/vim-dirvish'
 
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
+let g:indentLine_enable = 1
+let g:indentLine_char = '¦'
 """""""""""""""vim-signify"""""""""""""""""""""""""""
 let g:signify_vcs_list = ['git']
 let g:signify_realtime = 0
