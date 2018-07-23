@@ -4,6 +4,7 @@ set hidden
 filetype off" 开启文件类型检测 
 filetype plugin on 
 filetype indent on
+set showtabline=0
 set autowriteall
 set autoread
 set hlsearch
@@ -85,10 +86,11 @@ nnoremap <silent> <F3> :e ~/.vimrc<CR>
 colorscheme molokai
 
 
+call plug#begin('~/.vim/plugged')
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+"set rtp+=~/.vim/bundle/Vundle.vim
 "alternatively, pass a path where Vundle should install plugins
-call vundle#begin()
+"call vundle#begin()
 "call vundle#begin('~/some/path/here')
 "--------------插件区-------------------------------
 "let Vundle manage Vundle, required
@@ -96,22 +98,22 @@ call vundle#begin()
 
 
 """""""""""""管理插件"""""""""""""""""""""""""""""""
-Plugin 'VundleVim/Vundle.vim' 
+Plug 'VundleVim/Vundle.vim' 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""Dash"""""""""""""""""""""""""""""""
-Plugin 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""airline""""""""""""""""""""""""""""""
-Plugin 'vim-airline/vim-airline'
-Plugin 'ludovicchabant/vim-lawrencium'
+Plug 'vim-airline/vim-airline'
+Plug 'ludovicchabant/vim-lawrencium'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""语法高亮插件“”“”“”“”“”“”“”“""""""""""
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight=1
 let g:cpp_member_variable_highlight=1
 let g:cpp_class_decl_highlight=1
@@ -120,7 +122,7 @@ let g:cpp_experimental_template_highlight = 1
 
 
 """""""""""""" You Complete Me""""""""""""""""""""""
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 "回车选中自动匹配当前项
 inoremap <expr> <CR> pumvisible()? "\<C-y>" : "\<CR>" 
@@ -165,61 +167,62 @@ let g:ycm_completion_in_comments=1
 
 
 """""""""""NerdTree"""""""""""""""""""""""""""""""""
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""ctrl-space""""""""""""""""""""""""""""""
-Plugin 'szw/vim-ctrlspace'
+Plug 'szw/vim-ctrlspace'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""easy-motion""""""""""""""""""""""""""""
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""clang-format""""""""""
-Plugin 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 """"""""""""""""""""""""""""""""""
 
 
 """""""""""括号自动匹配"""""""""""""""""""""""""""""
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""tagbar""""""""""""""""""""""""""""""""""""
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""CtrlP""""""""""""""""""""""""""""""""""""
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""vim-autoformat"""""""""""""""""""""""""""
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 
 """""""""""""""""LeaderF""""""""""""""""""""""""""""
-Plugin 'Yggdroot/LeaderF' 
+Plug 'Yggdroot/LeaderF' 
 nnoremap <C-f> :LeaderfFunction<cr>
 """"""""""""""""echodoc""""""""""""""""""""""""""""""'
-Plugin 'Shougo/echodoc.vim'
+Plug 'Shougo/echodoc.vim'
 let g:echodoc#enable_at_startup=1
 
 """""""""""""""asyncrun""""""""""""""""""""""""""""""
-Plugin 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asyncrun.vim'
 "自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
  
 " 任务结束时候响铃提醒
 let g:asyncrun_bell = 1
 """""""""""""""""""vim-fugitive"""""""""""""""""""""
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " 设置 F10 打开/关闭 Quickfix 窗口
 nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 """"""""""""vim-dirvish""""""""""""""""""""""""""""""
-Plugin 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-dirvish'
 
-Plugin 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
+Plug 'Yggdroot/indentLine'
 """""""""""""""vim-signify"""""""""""""""""""""""""""
 let g:signify_vcs_list = ['git']
 let g:signify_realtime = 0
@@ -230,8 +233,8 @@ let g:signify_update_on_focusgained = 1
 
 """"""""""""""""""""""""""""Vundle使用说明"""""""""""""""""""""""""
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on
+"call vundle#end()            " required
+"filetype plugin indent on
 " To ignore plugin indent changes, instead use:
 " Brief help
 " :PluginList       - lists configured plugins
@@ -241,3 +244,4 @@ filetype plugin indent on
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+call plug#end()
