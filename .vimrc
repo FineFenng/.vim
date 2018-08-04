@@ -235,6 +235,7 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 """"""""""""vim-dirvish""""""""""""""""""""""""""""""
 Plug 'justinmk/vim-dirvish'
+Plug 'rdnetto/YCM-Generator' , {'branch': 'stable'}
 
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
