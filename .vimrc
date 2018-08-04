@@ -1,6 +1,5 @@
 set nocompatible
 set hidden
-
 filetype off" 开启文件类型检测 
 filetype plugin on 
 filetype indent on
@@ -12,6 +11,8 @@ set modifiable
 set nobackup
 set noswapfile
 set noshowmode
+
+
 
 "设置快捷键前缀
 let mapleader=";"
@@ -44,11 +45,11 @@ filetype indent on
 "将指制表符拓展为空格
 set expandtab
 "设置编辑时占用的空格数
-set tabstop=2
+set tabstop=4
 "设置格式化时制表符占用空格数 
-set shiftwidth=2
+set shiftwidth=4
 "让 vim 把连续数量的空格视为一个制表符
-set softtabstop=2
+set softtabstop=4
 "设置字体
 set encoding=utf-8
 " "禁止代码自动折行
@@ -59,6 +60,7 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
+set guifont=Inconsolata-g\ for\ Powerline:h11
 
 "--------------按键映射配置区-——--------------------
 
@@ -84,6 +86,15 @@ nnoremap <silent> <F3> :e ~/.vimrc<CR>
 "--------------——主题-------------------------------
 "molokai
 colorscheme molokai
+
+"-------------------自定义函数-----------------------
+let g:WorkSpace = "~/WorkSpace"
+
+function DefaultWorkDirectory(directoryName)
+    execute ":cd " .a:directoryName
+endfunction
+
+call DefaultWorkDirectory(WorkSpace)
 
 
 call plug#begin('~/.vim/plugged')
