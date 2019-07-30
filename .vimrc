@@ -94,7 +94,7 @@ function DefaultWorkDirectory(directoryName)
     execute ":cd " .a:directoryName
 endfunction
 
-call DefaultWorkDirectory(WorkSpace)
+"call DefaultWorkDirectory(WorkSpace)
 
 
 call plug#begin('~/.vim/plugged')
